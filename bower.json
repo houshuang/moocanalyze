@@ -1,0 +1,11 @@
+{
+  "name": "moocanalyze",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.3.1",
+    "modernizr": "~2.8.1",
+    "d3": "~3.5.5",
+    "lodash": "~3.6.0",
+    "d3-indent": "~0.1.0"
+  }
+}
