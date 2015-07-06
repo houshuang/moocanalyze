@@ -122,6 +122,16 @@ gulp.task('build', ['jshint', 'html', 'images', 'fonts', 'extras'], function () 
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
-gulp.task('default', ['clean'], function () {
-  gulp.start('build');
+var gulp = require("gulp");
+var sourcemaps = require("gulp-sourcemaps");
+var babel = require("gulp-babel");
+var concat = require("gulp-concat");
+
+gulp.task("default", function () {
+  return gulp.src("src/**/*.js")
+    .pipe(sourcemaps.init())
+    .pipe(concat("all.js"))
+    .pipe(babel())
+    .pipe(sourcemaps.write("."))
+    .pipe(gulp.dest("dist"));
 });
